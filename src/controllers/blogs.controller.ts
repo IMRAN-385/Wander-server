@@ -1,7 +1,5 @@
-import { Request, Response, Router } from 'express';
+import { Request, Response } from 'express';
 import Blog from '../models/Blog';
-
-const router = Router();
 
 function slugify(title: string): string {
   return title
@@ -135,4 +133,3 @@ export const deleteBlog = async (req: Request, res: Response) => {
     res.status(500).json({ success: false, message: 'Failed to delete blog post' });
   }
 };
-export default router;
